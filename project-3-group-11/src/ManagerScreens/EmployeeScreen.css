@@ -1,0 +1,140 @@
+.employee-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.employee-container h1 {
+  color: #2d6cdf;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Table Styles */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #2d6cdf;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.employee-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.employee-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #e3e9ff;
+}
+
+.employee-table tbody tr.selected {
+  background-color: #c5d9ff;
+  border-left: 4px solid #2d6cdf;
+}
+
+/* Error Banner */
+.error-banner {
+  background-color: #ffe6e6;
+  color: #c00;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+  font-size: 14px;
+}
+
+/* Inputs */
+.employee-container input,
+.employee-container select {
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.employee-container input:focus,
+.employee-container select:focus {
+  outline: none;
+  border-color: #2d6cdf;
+  box-shadow: 0 0 0 3px rgba(45, 108, 223, 0.15);
+}
+
+/* Button Row */
+.btn-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-row button {
+  background-color: #2d6cdf;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(45, 108, 223, 0.3);
+}
+
+.btn-row button:hover:not(:disabled) {
+  background-color: #2558b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(45, 108, 223, 0.4);
+}
+
+.btn-row button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .employee-container {
+    padding: 20px;
+  }
+
+  .employee-table {
+    font-size: 14px;
+  }
+
+  .employee-table th,
+  .employee-table td {
+    padding: 8px 10px;
+  }
+
+  .btn-row button {
+    width: 100%;
+  }
+}

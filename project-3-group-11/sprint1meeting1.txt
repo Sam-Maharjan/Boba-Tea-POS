@@ -1,0 +1,5 @@
+Agenda:
+Decide tech stack
+Assign tasks
+Minutes:
+In the previous meeting, we discussed what our tech stack will be for this project, as well as assigning which part of the project each team member will work on. We decided on using React with JavaScript for our frontend and using Python with Flask for our backend. Liam will work on the cashier interface, Andre will work on the menu interface, Raafay will work on the customer interface, and Sam and Matthew will work on the manager interface.

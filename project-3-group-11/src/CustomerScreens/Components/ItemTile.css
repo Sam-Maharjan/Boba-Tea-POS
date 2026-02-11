@@ -1,0 +1,118 @@
+.item-tile {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.item-tile.clicked {
+    animation: pulseItem 0.5s ease-out;
+}
+
+@keyframes pulseItem {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    75% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.itemDetailsContainer {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.item-tile.clicked .itemDetailsContainer {
+    animation: flashDetails 0.5s ease-out;
+}
+
+@keyframes flashDetails {
+    0%, 100% {
+        background-color: blueviolet;
+    }
+    50% {
+        background-color: #9370DB;
+    }
+}
+
+.item-name {
+    font-size: 1.2em;
+    color: white;
+    margin: 0;
+}
+
+.item-price {
+    color: white;
+    font-size: 1em;
+    margin: 8px 0 0 0;
+}
+
+.allergen-info {
+    margin-top: 2px;
+}
+
+.allergen-badge {
+    display: inline-block;
+    margin: 6px;
+    font-size: 1.2em;
+}
+
+.high-contrast .item-tile {
+    background-color: #3a3a3a;
+    border: 2px solid #ffff33;
+    box-shadow: none;
+}
+
+.high-contrast .itemDetailsContainer {
+    background-color: #000000;
+}
+
+.high-contrast .item-name,
+.high-contrast .item-price,
+.high-contrast .allergen-info,
+.high-contrast .allergen-badge {
+    color: #ffff33;
+}
+
+.high-contrast .item-tile.clicked .itemDetailsContainer {
+    animation: flashDetailsHighContrast 0.5s ease-out;
+}
+
+@keyframes flashDetailsHighContrast {
+    0%, 100% {
+        background-color: #000000;
+    }
+    50% {
+        background-color: #333333;
+    }
+}

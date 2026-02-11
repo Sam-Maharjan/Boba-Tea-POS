@@ -1,0 +1,343 @@
+/* InventoryScreen.css - Using blue color scheme */
+
+.manager-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.manager-title {
+  color: #2d6cdf;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Table Styles */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-table th,
+.inventory-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: #2d6cdf;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.inventory-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inventory-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #e3e9ff;
+}
+
+.inventory-table tbody tr.selected {
+  background-color: #c5d9ff;
+  border-left: 4px solid #2d6cdf;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #ffe6e6;
+  color: #c00;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+  font-size: 14px;
+}
+
+/* Notification Toast */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  animation: slideInRight 0.3s ease-out;
+  max-width: 400px;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+  color: white;
+  border-left: 5px solid #2d8832;
+}
+
+.notification.error {
+  background-color: #f44336;
+  color: white;
+  border-left: 5px solid #c62828;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Button Grid */
+.button-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Date Input Styling */
+.date-input {
+  padding: 8px 12px;
+  border: 2px solid #2d6cdf;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: #2558b8;
+  box-shadow: 0 0 0 3px rgba(45, 108, 223, 0.15);
+}
+
+.date-input:hover {
+  border-color: #2558b8;
+}
+
+.manager-btn {
+  background-color: #2d6cdf;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(45, 108, 223, 0.3);
+}
+
+.manager-btn:hover:not(:disabled) {
+  background-color: #2558b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(45, 108, 223, 0.4);
+}
+
+.manager-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.manager-btn:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* Dialog Styles */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+  max-width: 500px;
+  animation: slideIn 0.3s;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dialog-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #2d6cdf;
+}
+
+.dialog-box p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 15px;
+}
+
+.dialog-box label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+.dialog-box input {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.dialog-box input:focus {
+  outline: none;
+  border-color: #2d6cdf;
+  box-shadow: 0 0 0 3px rgba(45, 108, 223, 0.15);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.dialog-buttons button {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dialog-buttons button:first-child {
+  background-color: #2d6cdf;
+  color: white;
+  box-shadow: 0 2px 4px rgba(45, 108, 223, 0.3);
+}
+
+.dialog-buttons button:first-child:hover:not(:disabled) {
+  background-color: #2558b8;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(45, 108, 223, 0.4);
+}
+
+.dialog-buttons button:last-child {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.dialog-buttons button:last-child:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.dialog-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Chart Container */
+.chart-container {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.chart-title {
+  text-align: center;
+  color: #2d6cdf;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manager-container {
+    padding: 20px;
+  }
+
+  .inventory-table {
+    font-size: 14px;
+  }
+
+  .inventory-table th,
+  .inventory-table td {
+    padding: 8px 10px;
+  }
+
+  .dialog-box {
+    min-width: 90%;
+    padding: 20px;
+  }
+
+  .button-grid {
+    flex-direction: column;
+  }
+
+  .manager-btn {
+    width: 100%;
+  }
+}

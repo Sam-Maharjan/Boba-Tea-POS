@@ -1,0 +1,451 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: blueviolet;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cart-button-container {
+    position: relative;
+}
+
+.cart-button {
+    width: 40px;
+    height: 40px;
+    background-image: url('/Assets/shopping_cart.png');
+    background-color: transparent;
+    filter: invert(1);
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Pop animation for cart badge */
+.cart-badge.pop {
+    animation: popBadge 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popBadge {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: #28a745;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 250px;
+    animation: slideInRight 0.3s ease-out, fadeOut 0.3s ease-in 2.7s;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.multiselect {
+    padding: 8px;
+    width: 200px;
+    overflow-y: auto;
+}
+
+.contrast-toggle {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contrast-toggle:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.high-contrast .contrast-toggle {
+    background-color: #333333;
+    color: #ffff33;
+    border-color: #ffff33;
+}
+
+.high-contrast {
+    background-color: #000000;
+    color: #ffff33;
+}
+
+.high-contrast .header {
+    background-color: #000000;
+    border-bottom: 2px solid #ffffff;
+}
+
+.high-contrast .header h1 {
+    color: #ffff33;
+}
+
+.high-contrast .multiselect {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffffff;
+}
+
+.high-contrast .cart-button {
+    filter: none;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.high-contrast .cart-badge {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.high-contrast .product-grid {
+    background-color: #000000;
+}
+
+.high-contrast .product-grid>* {
+    background-color: #3a3a3a;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+}
+
+.high-contrast .product-grid * {
+    color: #ffff33;
+}
+
+.high-contrast .product-grid button {
+    background-color: #555555;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .toast {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.contrast-select:hover {
+    background-color: #e6e6e6;
+}
+
+.font-size-select {
+    padding: 8px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.font-size-select:hover {
+    background-color: #e6e6e6;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+    padding: 20px;
+    z-index: 1100;
+}
+
+.modal {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 420px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.modal-section {
+    margin-bottom: 16px;
+}
+
+.modal-section label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.modal-section select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.875rem;
+}
+
+.modifications-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mod-chip {
+    border-radius: 999px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.mod-chip.selected {
+    border-color: blueviolet;
+    background-color: #ead9ff;
+}
+
+.quantity-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.quantity-section button {
+    padding: 4px 12px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.modal-actions button:last-child {
+    background-color: blueviolet;
+    border-color: blueviolet;
+    color: white;
+}
+
+.category-filter {
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.category-selector{
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+}
+
+.high-contrast .category-selector{
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+
+.high-contrast .category-filter {
+    color: #ffff33;
+}
+
+.high-contrast .modal {
+    background-color: #000000;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .modal-section select {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .mod-chip {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .mod-chip.selected {
+    background-color: #ffff33;
+    color: #000000;
+    border-color: #ffff33;
+}
+
+.high-contrast .quantity-section button {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .modal-actions button {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.high-contrast .modal-actions button:last-child {
+    background-color: #ffff33;
+    color: #000000;
+    border-color: #ffff33;
+}
+
+/* Recent Orders Button */
+.recent-orders-btn {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.recent-orders-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.recent-orders-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.high-contrast .recent-orders-btn {
+    background: #333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}
+
+.vegan-toggle {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vegan-toggle:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.high-contrast .vegan-toggle {
+    background-color: #333333;
+    color: #ffff33;
+    border: 2px solid #ffff33;
+}

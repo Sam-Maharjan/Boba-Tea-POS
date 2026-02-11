@@ -1,0 +1,4 @@
+Agenda:
+Status update on features
+Minutes:
+We have made no progress since the previous meeting. We have decided to reduce the scope of sprint 1 slightly in order to accommodate this lack of progress.

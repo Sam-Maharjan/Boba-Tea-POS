@@ -1,0 +1,161 @@
+.text-size-font-selector {
+    position: relative;
+}
+
+.selector-toggle {
+    padding: 8px 14px;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.selector-toggle:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.selector-toggle:focus {
+    outline: 2px solid blueviolet;
+    outline-offset: 2px;
+}
+
+.selector-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.selector-section {
+    margin-bottom: 16px;
+}
+
+.selector-section:last-child {
+    margin-bottom: 0;
+}
+
+.selector-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.font-size-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.font-size-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.font-size-slider::-webkit-slider-thumb:hover {
+    background-color: #8a2be2;
+}
+
+.font-size-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.font-size-slider::-moz-range-thumb:hover {
+    background-color: #8a2be2;
+}
+
+.font-size-label {
+    min-width: 50px;
+    text-align: right;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.font-family-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.font-family-select:hover {
+    border-color: #999;
+}
+
+.font-family-select:focus {
+    outline: 2px solid blueviolet;
+    outline-offset: -1px;
+    border-color: blueviolet;
+}
+
+.high-contrast .selector-toggle {
+    background-color: #333333;
+    color: #ffff33;
+    border-color: #ffff33;
+}
+
+.high-contrast .font-family-select{
+    background-color: #000000;
+    color: #ffff33;
+    border-color: #ffff33;
+}
+
+.high-contrast .font-size-slider::-webkit-slider-thumb {
+    background-color: #ffff33;
+    border: 2px solid #000000;
+}
+
+.high-contrast .selector-dropdown {
+    background-color: #000000;
+    border-color: #ffff33;
+}
+
+.high-contrast .selector-label{
+    color: #ffff33;
+}
+
+.high-contrast .font-size-label {
+    color: #ffff33;
+}

@@ -1,0 +1,5 @@
+Agenda:
+Plan the order of feature implementations
+Status update on features
+Minutes:
+In the previous meeting, we planned how we would go about implementing the features. We decided it would be best to focus on functionality over form and that we would begin by creating a “skeleton” or rough outline for each interface. We will then, in the future, focus on adding functionality to each interface before making it visually appealing and adding accessibility features. 
